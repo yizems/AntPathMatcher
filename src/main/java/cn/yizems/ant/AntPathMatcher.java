@@ -1,4 +1,5 @@
-package cn.yizems.ant;/*
+package cn.yizems.ant;
+/*
  * Copyright 2002-2020 the original author or authors.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,7 +17,11 @@ package cn.yizems.ant;/*
 
 
 import java.nio.file.PathMatcher;
-import java.util.*;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -89,9 +94,9 @@ public class AntPathMatcher {
 
 	private volatile Boolean cachePatterns;
 
-	private final Map<String, String[]> tokenizedPatternCache = new ConcurrentHashMap<>(256);
+	private final Map<String, String[]> tokenizedPatternCache = new ConcurrentHashMap<>();
 
-	final Map<String, AntPathStringMatcher> stringMatcherCache = new ConcurrentHashMap<>(256);
+	final Map<String, AntPathStringMatcher> stringMatcherCache = new ConcurrentHashMap<>();
 
 
 	/**
